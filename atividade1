@@ -1,0 +1,9 @@
+DECLARE menu : INT
+OUTPUT "escolha uma opção e digite 1-hamburguer. 2-pizza ou 3-macarrão"
+INPUT menu
+if (menu = 1) 
+OUTPUT "Hamburguer" ENDIF
+if (menu = 2) 
+OUTPUT "Pizza" ENDIF
+if (menu = 3) 
+OUTPUT "Macarrão" ENDIF
