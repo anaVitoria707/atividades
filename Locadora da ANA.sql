@@ -1,0 +1,7 @@
+CREATE TABLE fornecedor(
+cnpj BIGINT(14) PRIMARY KEY NOT NULL,
+nome VARCHAR(45),
+endereco TEXT,
+fone BIGINT(11) NOT NULL,
+email TEXT NOT NULL
+);
