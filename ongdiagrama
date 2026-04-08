@@ -1,0 +1,369 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 08/04/2026 às 02:54
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `petlovers`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `animais`
+--
+
+CREATE TABLE `animais` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `especie` varchar(45) NOT NULL,
+  `porte` varchar(45) NOT NULL,
+  `idade` double DEFAULT NULL,
+  `condicoes` text NOT NULL,
+  `vacinas` text NOT NULL,
+  `castrado` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `animais`
+--
+
+INSERT INTO `animais` (`id`, `nome`, `especie`, `porte`, `idade`, `condicoes`, `vacinas`, `castrado`) VALUES
+(1, 'Rex', 'Cachorro', 'Grande', 5.1, 'Saudável', 'V8, Antirrábica', 'Sim'),
+(2, 'Mimi', 'Gato', 'Pequeno', 3.3, 'Saudável', 'V4, Antirrábica', 'Sim'),
+(3, 'Thor', 'Cachorro', 'Grande', 7.3, 'Problema na pata', 'V8, Antirrábica', 'Não'),
+(4, 'Luna', 'Gato', 'Pequeno', 2.4, 'Saudável', 'V4', 'Sim'),
+(5, 'Bob', 'Cachorro', 'Médio', 4.5, 'Alergia', 'V8', 'Não'),
+(6, 'Nina', 'Gato', 'Pequeno', 6.6, 'Saudável', 'V4, Antirrábica', 'Sim'),
+(7, 'Max', 'Cachorro', 'Grande', 8.7, 'Idoso', 'V8, Antirrábica', 'Sim'),
+(8, 'Mel', 'Cachorro', 'Médio', 1.1, 'Saudável', 'V8', 'Não'),
+(9, 'Simba', 'Gato', 'Médio', 3.4, 'Saudável', 'V4', 'Sim'),
+(10, 'Bela', 'Cachorro', 'Pequeno', 5.4, 'Recuperação', 'V8, Antirrábica', 'Sim');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `estrutura`
+--
+
+CREATE TABLE `estrutura` (
+  `numeroFilial` int(11) NOT NULL,
+  `numeroGaiolas` int(11) NOT NULL,
+  `tamanhoGaiola` varchar(45) NOT NULL,
+  `ocupacaoGaiola` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `estrutura`
+--
+
+INSERT INTO `estrutura` (`numeroFilial`, `numeroGaiolas`, `tamanhoGaiola`, `ocupacaoGaiola`) VALUES
+(1, 12, 'Pequena', 10),
+(2, 8, 'Média', 6),
+(3, 15, 'Grande', 12),
+(4, 20, 'Grande', 18),
+(5, 5, 'Pequena', 3),
+(6, 10, 'Média', 9),
+(7, 18, 'Grande', 15),
+(8, 7, 'Pequena', 5),
+(9, 14, 'Média', 11),
+(10, 9, 'Grande', 7);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `financeiro`
+--
+
+CREATE TABLE `financeiro` (
+  `notaFiscal` int(11) NOT NULL,
+  `doacoes` text NOT NULL,
+  `gastosAnimais` text NOT NULL,
+  `gastosEstrutura` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `financeiro`
+--
+
+INSERT INTO `financeiro` (`notaFiscal`, `doacoes`, `gastosAnimais`, `gastosEstrutura`) VALUES
+(1, '500.00', '120.50', '300.00'),
+(2, '250.00', '80.00', '150.75'),
+(3, '1000.00', '300.00', '450.00'),
+(4, '150.00', '60.25', '90.00'),
+(5, '700.00', '200.00', '350.00'),
+(6, '50.00', '20.00', '40.00'),
+(7, '900.00', '400.00', '500.00'),
+(8, '300.00', '100.00', '200.00'),
+(9, '450.00', '150.00', '250.00'),
+(10, '600.00', '220.00', '330.00'),
+(11, '500.00', '120.50', '300.00'),
+(12, '250.00', '80.00', '150.75'),
+(13, '1000.00', '300.00', '450.00'),
+(14, '150.00', '60.25', '90.00'),
+(15, '700.00', '200.00', '350.00'),
+(16, '50.00', '20.00', '40.00'),
+(17, '900.00', '400.00', '500.00'),
+(18, '300.00', '100.00', '200.00'),
+(19, '450.00', '150.00', '250.00'),
+(20, '600.00', '220.00', '330.00'),
+(21, '500.00', '120.50', '300.00'),
+(22, '250.00', '80.00', '150.75'),
+(23, '1000.00', '300.00', '450.00'),
+(24, '150.00', '60.25', '90.00'),
+(25, '700.00', '200.00', '350.00'),
+(26, '50.00', '20.00', '40.00'),
+(27, '900.00', '400.00', '500.00'),
+(28, '300.00', '100.00', '200.00'),
+(29, '450.00', '150.00', '250.00'),
+(30, '600.00', '220.00', '330.00'),
+(31, '500.00', '120.50', '300.00'),
+(32, '250.00', '80.00', '150.75'),
+(33, '1000.00', '300.00', '450.00'),
+(34, '150.00', '60.25', '90.00'),
+(35, '700.00', '200.00', '350.00'),
+(36, '50.00', '20.00', '40.00'),
+(37, '900.00', '400.00', '500.00'),
+(38, '300.00', '100.00', '200.00'),
+(39, '450.00', '150.00', '250.00'),
+(40, '600.00', '220.00', '330.00'),
+(41, '500.00', '120.50', '300.00'),
+(42, '250.00', '80.00', '150.75'),
+(43, '1000.00', '300.00', '450.00'),
+(44, '150.00', '60.25', '90.00'),
+(45, '700.00', '200.00', '350.00'),
+(46, '50.00', '20.00', '40.00'),
+(47, '900.00', '400.00', '500.00'),
+(48, '300.00', '100.00', '200.00'),
+(49, '450.00', '150.00', '250.00'),
+(50, '600.00', '220.00', '330.00'),
+(51, '500.00', '120.50', '300.00'),
+(52, '250.00', '80.00', '150.75'),
+(53, '1000.00', '300.00', '450.00'),
+(54, '150.00', '60.25', '90.00'),
+(55, '700.00', '200.00', '350.00'),
+(56, '50.00', '20.00', '40.00'),
+(57, '900.00', '400.00', '500.00'),
+(58, '300.00', '100.00', '200.00'),
+(59, '450.00', '150.00', '250.00'),
+(60, '600.00', '220.00', '330.00'),
+(61, '500.00', '120.50', '300.00'),
+(62, '250.00', '80.00', '150.75'),
+(63, '1000.00', '300.00', '450.00'),
+(64, '150.00', '60.25', '90.00'),
+(65, '700.00', '200.00', '350.00'),
+(66, '50.00', '20.00', '40.00'),
+(67, '900.00', '400.00', '500.00'),
+(68, '300.00', '100.00', '200.00'),
+(69, '450.00', '150.00', '250.00'),
+(70, '600.00', '220.00', '330.00'),
+(71, '500.00', '120.50', '300.00'),
+(72, '250.00', '80.00', '150.75'),
+(73, '1000.00', '300.00', '450.00'),
+(74, '150.00', '60.25', '90.00'),
+(75, '700.00', '200.00', '350.00'),
+(76, '50.00', '20.00', '40.00'),
+(77, '900.00', '400.00', '500.00'),
+(78, '300.00', '100.00', '200.00'),
+(79, '450.00', '150.00', '250.00'),
+(80, '600.00', '220.00', '330.00'),
+(81, '500.00', '120.50', '300.00'),
+(82, '250.00', '80.00', '150.75'),
+(83, '1000.00', '300.00', '450.00'),
+(84, '150.00', '60.25', '90.00'),
+(85, '700.00', '200.00', '350.00'),
+(86, '50.00', '20.00', '40.00'),
+(87, '900.00', '400.00', '500.00'),
+(88, '300.00', '100.00', '200.00'),
+(89, '450.00', '150.00', '250.00'),
+(90, '600.00', '220.00', '330.00'),
+(91, '500.00', '120.50', '300.00'),
+(92, '250.00', '80.00', '150.75'),
+(93, '1000.00', '300.00', '450.00'),
+(94, '150.00', '60.25', '90.00'),
+(95, '700.00', '200.00', '350.00'),
+(96, '50.00', '20.00', '40.00'),
+(97, '900.00', '400.00', '500.00'),
+(98, '300.00', '100.00', '200.00'),
+(99, '450.00', '150.00', '250.00'),
+(100, '600.00', '220.00', '330.00'),
+(101, '500.00', '120.50', '300.00'),
+(102, '250.00', '80.00', '150.75'),
+(103, '1000.00', '300.00', '450.00'),
+(104, '150.00', '60.25', '90.00'),
+(105, '700.00', '200.00', '350.00'),
+(106, '50.00', '20.00', '40.00'),
+(107, '900.00', '400.00', '500.00'),
+(108, '300.00', '100.00', '200.00'),
+(109, '450.00', '150.00', '250.00'),
+(110, '600.00', '220.00', '330.00'),
+(111, '500.00', '120.50', '300.00'),
+(112, '250.00', '80.00', '150.75'),
+(113, '1000.00', '300.00', '450.00'),
+(114, '150.00', '60.25', '90.00'),
+(115, '700.00', '200.00', '350.00'),
+(116, '50.00', '20.00', '40.00'),
+(117, '900.00', '400.00', '500.00'),
+(118, '300.00', '100.00', '200.00'),
+(119, '450.00', '150.00', '250.00'),
+(120, '600.00', '220.00', '330.00'),
+(121, '500.00', '120.50', '300.00'),
+(122, '250.00', '80.00', '150.75'),
+(123, '1000.00', '300.00', '450.00'),
+(124, '150.00', '60.25', '90.00'),
+(125, '700.00', '200.00', '350.00'),
+(126, '50.00', '20.00', '40.00'),
+(127, '900.00', '400.00', '500.00'),
+(128, '300.00', '100.00', '200.00'),
+(129, '450.00', '150.00', '250.00'),
+(130, '600.00', '220.00', '330.00'),
+(131, '500.00', '120.50', '300.00'),
+(132, '250.00', '80.00', '150.75'),
+(133, '1000.00', '300.00', '450.00'),
+(134, '150.00', '60.25', '90.00'),
+(135, '700.00', '200.00', '350.00'),
+(136, '50.00', '20.00', '40.00'),
+(137, '900.00', '400.00', '500.00'),
+(138, '300.00', '100.00', '200.00'),
+(139, '450.00', '150.00', '250.00'),
+(140, '600.00', '220.00', '330.00'),
+(141, '500.00', '120.50', '300.00'),
+(142, '250.00', '80.00', '150.75'),
+(143, '1000.00', '300.00', '450.00'),
+(144, '150.00', '60.25', '90.00'),
+(145, '700.00', '200.00', '350.00'),
+(146, '50.00', '20.00', '40.00'),
+(147, '900.00', '400.00', '500.00'),
+(148, '300.00', '100.00', '200.00'),
+(149, '450.00', '150.00', '250.00'),
+(150, '600.00', '220.00', '330.00');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `funcionarios`
+--
+
+CREATE TABLE `funcionarios` (
+  `cpf` bigint(11) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `salario` double NOT NULL,
+  `turno` text NOT NULL,
+  `funcao` text NOT NULL,
+  `contato` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `funcionarios`
+--
+
+INSERT INTO `funcionarios` (`cpf`, `nome`, `salario`, `turno`, `funcao`, `contato`) VALUES
+(12345678901, 'João Silva', 2500.5, 'Manhã', 'Cuidador', '11999990001'),
+(12345678902, 'Maria Souza', 3200.75, 'Tarde', 'Veterinária', '11999990002'),
+(12345678903, 'Carlos Lima', 2100, 'Noite', 'Auxiliar', '11999990003'),
+(12345678904, 'Ana Costa', 2800.3, 'Manhã', 'Recepcionista', '11999990004'),
+(12345678905, 'Pedro Santos', 3500.9, 'Tarde', 'Veterinário', '11999990005'),
+(12345678906, 'Juliana Alves', 2600.4, 'Noite', 'Cuidadora', '11999990006'),
+(12345678907, 'Rafael Pereira', 4000, 'Manhã', 'Gerente', '11999990007'),
+(12345678908, 'Fernanda Rocha', 2300.8, 'Tarde', 'Auxiliar', '11999990008'),
+(12345678909, 'Bruno Martins', 2700.6, 'Noite', 'Segurança', '11999990009'),
+(12345678910, 'Camila Freitas', 3100.2, 'Manhã', 'Administrativo', '11999990010');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `registrodonatario`
+--
+
+CREATE TABLE `registrodonatario` (
+  `rg` bigint(7) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `contato` text NOT NULL,
+  `endereco` text NOT NULL,
+  `animal` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `registrodonatario`
+--
+
+INSERT INTO `registrodonatario` (`rg`, `nome`, `contato`, `endereco`, `animal`) VALUES
+(1000001, 'Lucas Andrade', '11988880001', 'Rua A, 123', 'Cachorro'),
+(1000002, 'Mariana Lopes', '11988880002', 'Rua B, 456', 'Gato'),
+(1000003, 'Felipe Gomes', '11988880003', 'Rua C, 789', 'Cachorro'),
+(1000004, 'Patricia Melo', '11988880004', 'Rua D, 101', 'Gato'),
+(1000005, 'Gustavo Ribeiro', '11988880005', 'Rua E, 202', 'Coelho'),
+(1000006, 'Aline Barros', '11988880006', 'Rua F, 303', 'Cachorro'),
+(1000007, 'Ricardo Nunes', '11988880007', 'Rua G, 404', 'Gato'),
+(1000008, 'Beatriz Carvalho', '11988880008', 'Rua H, 505', 'Pássaro'),
+(1000009, 'Eduardo Teixeira', '11988880009', 'Rua I, 606', 'Cachorro'),
+(1000010, 'Larissa Duarte', '11988880010', 'Rua J, 707', 'Gato');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `animais`
+--
+ALTER TABLE `animais`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `estrutura`
+--
+ALTER TABLE `estrutura`
+  ADD PRIMARY KEY (`numeroFilial`);
+
+--
+-- Índices de tabela `financeiro`
+--
+ALTER TABLE `financeiro`
+  ADD PRIMARY KEY (`notaFiscal`);
+
+--
+-- Índices de tabela `funcionarios`
+--
+ALTER TABLE `funcionarios`
+  ADD PRIMARY KEY (`cpf`);
+
+--
+-- Índices de tabela `registrodonatario`
+--
+ALTER TABLE `registrodonatario`
+  ADD PRIMARY KEY (`rg`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `animais`
+--
+ALTER TABLE `animais`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de tabela `financeiro`
+--
+ALTER TABLE `financeiro`
+  MODIFY `notaFiscal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
