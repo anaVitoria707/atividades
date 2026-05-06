@@ -1,0 +1,35 @@
+nome = "Ana"
+idade = 25
+cidade = "Curitiba"
+
+print(f"Olá, meu nome é {nome}, tenho {idade} e moro na cidade de {cidade}.")
+
+n1=float(input("digite um número:"))
+n2=float(input("digite um número:"))
+    
+print(n1 + n2)
+print(n1 - n2)
+print(n1 * n2)
+print(n1 / n2)    
+
+n=float(input("Digite um número:"))
+
+for (i) in range(1, 11):
+    print(n * i)
+
+
+
+secretNumber = 273
+userNumber = int(input("Digite um número:"))
+
+
+
+
+while userNumber != secretNumber :
+    userNumber=int(input("Errouuu, digite outro número:"))
+    if userNumber > secretNumber:
+        print("O número secreto é menor:")
+    elif userNumber < secretNumber:
+        print("O número secreto é maior:")
+    elif userNumber == secretNumber:
+        print("PARABENSS,você achou o número secreto")
