@@ -2,57 +2,37 @@ import mysql.connector
 
 # FUNÇÃO DE CONEXÃO
 def conectar():
-    try:
         conexao = mysql.connector.connect(
             host = "localhost",
             user = "root",
-            password = "ana",
-            database = "oficina"
+            password = "admin",
+            database = "oficina1"
         )
-        
-        if conexao.is_connected():
-            print("Conectado com sucesso!")
-            return conexao
-        else:
-            print("Falha na conexão")
-            return None
-
-    except Exception as erro:
-        print("Erro:", erro)
-        return None
-
+        print("conectado")
 
 # FUNÇÃO PARA INSERIR DADOS
 def inserir_dados(conexao):
     cursor = conexao.cursor()
 
-    cpf = input ("digite o cpf: ")
     nome = input("Digite o nome: ")
-    endereco = input ("digite seu endereço")
-    nascimento = (input("Digite sua data de nascimento: "))
+    salario = input ("digite seu salário")
+    contato = (input("Digite seu telefone: "))
 
-    sql = "INSERT INTO funcionarios (cpf, nome, endereco, data_nascimento) VALUES (%s, %s, %s, %s)"
-    values = (cpf, nome, endereco, nascimento)
+    sql = "INSERT INTO funcionario3 (nome, salario, contato) VALUES (%s, %s, %s)"
+    values = (nome, salario, contato)
 
     cursor.execute(sql, valores)
     conexao.commit()
 
     print("Dados inseridos com sucesso!")
 
-
-# FUNÇÃO PARA EXIBIR DADOS
+    # FUNÇÃO PARA EXIBIR DADOS
 def exibir_dados(conexao):
     cursor = conexao.cursor()
 
-    cursor.execute("SELECT * FROM funcionarios")
+    cursor.execute("SELECT * FROM funcionario3")
     resultados = cursor.fetchall()
 
     print("\n Dados da tabela:")
     for linha in resultados:
         print(linha)
-
-conexao = conectar()
-
-if conexao:
-    inserir_dados(conexao)
-    exibir_dados(conexao)
